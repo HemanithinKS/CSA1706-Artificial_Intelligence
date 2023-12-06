@@ -15,7 +15,7 @@ food(avocado, heart_healthy_fats).
 
 % Suggest suitable foods for diseases
 suggested_food(Disease, Food) :-
-    food(Food, Properties),
+    findall(Food, food(Food, Properties), Food),
     suitable_for(Disease, Properties).
 
 % Define suitable food properties for diseases
